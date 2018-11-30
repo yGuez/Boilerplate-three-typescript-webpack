@@ -1,0 +1,29 @@
+{
+  "name": "3d-webapp",
+  "version": "1.0.0",
+  "description": "test 3d app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js --mode=production",
+    "build:dev": "webpack --config webpack.config.js --mode=development",
+    "start": "webpack-dev-server --mode development"
+  },
+  "author": "yGuez",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^10.12.10",
+    "@types/three": "^0.93.10",
+    "css-loader": "^1.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^5.3.1",
+    "typescript": "^3.2.1",
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "dependencies": {
+    "three": "^0.98.0"
+  }
+}
