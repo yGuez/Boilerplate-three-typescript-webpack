@@ -4,8 +4,11 @@ import { Scene } from './Scene';
 export class App {
     public static main() {
         let scene = new Scene();
-        scene.Init();
-        scene.Animate();
+        scene.init();
+        scene.animate();
+        window.addEventListener('resize', () => {
+            scene.resize();
+      });
     }
 }
 

@@ -17,20 +17,30 @@ export class Scene {
         this._renderer = new THREE.WebGLRenderer({ antialias: true });
     }
 
-    public Animate(): void {
-        requestAnimationFrame(() => this.Animate());
+    public animate(): void {
+        requestAnimationFrame(() => this.animate());
 
         this._mesh.rotation.x += 0.01;
         this._mesh.rotation.y += 0.01;
 
         this._renderer.render(this._scene, this._camera);
-        console.log('hola');
     }
-    public Init(): void {
+
+    public init(): void {
         this._camera.position.z = 1;
         this._scene.add(this._mesh);
         this._renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(this._renderer.domElement);
-        console.log('hola');
+    }
+
+    public resize(): void {
+            let width = window.innerWidth;
+            let height = window.innerHeight;
+        
+            this._camera.aspect = width / height;
+            this._camera.updateProjectionMatrix();
+        
+            this._renderer.setSize( width, height );
+
     }
 }
